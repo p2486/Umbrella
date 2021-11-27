@@ -6,7 +6,7 @@ package at.ac.fhstp.zoechbauer;
  */
 public class App {
     public static void main(String[] args) {
-        System.out.println("Hello World!");
+        System.out.println("Hello World!2");
 
         Package pkg = new Package();
 
