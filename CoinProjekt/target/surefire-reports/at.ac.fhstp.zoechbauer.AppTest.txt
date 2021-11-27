@@ -1,7 +1,0 @@
--------------------------------------------------------------------------------
-Test set: at.ac.fhstp.zoechbauer.AppTest
--------------------------------------------------------------------------------
-Tests run: 1, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 0.059 s <<< FAILURE! - in at.ac.fhstp.zoechbauer.AppTest
-initializationError(at.ac.fhstp.zoechbauer.AppTest)  Time elapsed: 0.01 s  <<< ERROR!
-java.lang.Exception: Method testMock should have no parameters
-
