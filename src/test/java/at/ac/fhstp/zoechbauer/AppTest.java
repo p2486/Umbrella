@@ -35,7 +35,6 @@ public class AppTest {
         //
         assertTrue(true);
 
-
     }
 
     @Mock
@@ -49,7 +48,7 @@ public class AppTest {
         System.out.println(pkg.getState());
 
         assertThat(pkg.getState(), instanceOf(OrderedState.class));
-        //TEstBranch2
+        // TEstBranch2
     }
 
 }
