@@ -10,7 +10,7 @@ public class CoinManager {
 
     public CoinManager read(CryptoReader cr,Interpreter ip){
         
-        coinlist=ip.Interprete(cr.read(),this.coinlist);
+        ip.Interprete(cr.read(),this.coinlist);
         return this;
     }
 

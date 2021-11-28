@@ -7,7 +7,7 @@ import org.json.JSONObject;
 public class Interpreter_CoinMarket implements Interpreter {
 
     @Override
-    public List<Coin> Interprete(String HTTPResponse,List<Coin> coinlist) {
+    public void Interprete(String HTTPResponse,List<Coin> coinlist) {
 
         JSONObject json = new JSONObject(HTTPResponse);
         JSONArray jarry = (JSONArray)json.get("data");
@@ -27,7 +27,7 @@ public class Interpreter_CoinMarket implements Interpreter {
         
         }
         
-        return coinlist;
+       
         
        
         
