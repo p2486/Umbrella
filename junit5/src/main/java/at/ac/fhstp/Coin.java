@@ -1,8 +1,8 @@
 package at.ac.fhstp;
 
-import java.sql.Date;
+import java.util.Comparator;
 
-public class Coin {
+public class Coin implements Comparable<Coin>{
     private int id; // 1
     private String name; // Bitcoin
     private String symbol; // BTC
@@ -87,6 +87,10 @@ public class Coin {
         this.volume_24h = volume_24h;
         this.percent_change_24h = percent_change_24h;
         this.last_updated = last_updated;
+    }
+    @Override
+    public int compareTo(Coin c){
+        return Double.compare(c.price,this.price);
     }
 
     @Override

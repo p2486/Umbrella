@@ -46,7 +46,7 @@ public class CryptoReader_CoinMarket implements CryptoReader {
             // https://www.programcreek.com/java-api-examples/?api=java.net.http.HttpResponse
             // -> Beispiel 15
 
-            System.out.print("HTTP Status: " + res.toString());
+           // System.out.print("HTTP Status: " + res.toString());
             return res.body().toString();
         } catch (URISyntaxException | IOException | InterruptedException e) {
             // TODO Auto-generated catch block
