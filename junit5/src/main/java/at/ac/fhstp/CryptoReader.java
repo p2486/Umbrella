@@ -1,4 +1,4 @@
-package at.ac;
+package at.ac.fhstp;
 
 public interface CryptoReader {
     public String read();

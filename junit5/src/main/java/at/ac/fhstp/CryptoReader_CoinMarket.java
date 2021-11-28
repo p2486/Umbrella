@@ -5,9 +5,6 @@ import java.net.URI;
 import java.net.URISyntaxException;
 import java.net.http.HttpRequest;
 import java.net.http.HttpResponse;
-
-import at.ac.CryptoReader;
-
 import java.net.http.HttpClient;
 
 public class CryptoReader_CoinMarket implements CryptoReader {
