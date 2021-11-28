@@ -49,7 +49,7 @@ public class CryptoReader_CoinMarket implements CryptoReader {
            // System.out.print("HTTP Status: " + res.toString());
             return res.body().toString();
         } catch (URISyntaxException | IOException | InterruptedException e) {
-            // TODO Auto-generated catch block
+            
 
             e.printStackTrace();
             return null;

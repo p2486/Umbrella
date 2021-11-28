@@ -1,7 +1,5 @@
 package at.ac.fhstp;
 
-import java.util.Comparator;
-
 public class Coin implements Comparable<Coin>{
     private int id; // 1
     private String name; // Bitcoin

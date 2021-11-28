@@ -1,9 +1,5 @@
 package at.ac.fhstp;
 
-import java.util.Collections;
-import java.util.Iterator;
-import java.util.List;
-
 public class App {
     public static void main(String[] args) {
 
@@ -24,15 +20,7 @@ public class App {
         //ausgeben
         //manager.print();
  
-        // List<Coin> coins =
-        // for (Coin coin : coins) {
-        // System.out.print(coin.toString() + "\n");
-
-        /*
-        Read -> Interprete -> sort -> print -> resort -> print
-
-        */
-        // }
+       
 
     }
 }
