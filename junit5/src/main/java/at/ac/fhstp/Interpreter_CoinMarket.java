@@ -1,6 +1,7 @@
 package at.ac.fhstp;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
@@ -27,6 +28,7 @@ public class Interpreter_CoinMarket implements Interpreter {
         JSONArray jarry = (JSONArray)json.get("data");
         List<Coin> coinlist = new ArrayList<Coin>();
 
+        //alle in Liste hinzufügen
         for (Object job : jarry) {
         String id=(((JSONObject)job).optString("id"));
         String name=(((JSONObject)job).optString("name"));
@@ -41,13 +43,24 @@ public class Interpreter_CoinMarket implements Interpreter {
         
         }
         
+
+        // absteigend sortieren siehe compareTo Methode in Coin
+        Collections.sort(coinlist);
+
+        //alle ausgeben
         Iterator<Coin> ic = coinlist.iterator();
+        System.out.println("\n Sortiert nach Kurs \n");
         while(ic.hasNext()){
-            ic.toString();
+            Coin c = ic.next();
+            System.out.println(c.getSymbol()+" - "+c.getPrice());
         }
         
+        // Top Mover
+
+        System.out.println("\n Sortiert nach Top Movern \n");
         
-        // TODO Auto-generated method stub
+            
+       
         return null;
     }
 
