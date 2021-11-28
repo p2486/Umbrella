@@ -1,7 +1,8 @@
 package at.ac.fhstp;
 
-import java.util.HashMap;
+import java.util.List;
 
 public interface Interpreter {
-    public HashMap<String, String> Interprete(String HTTPResponse);
+    public List<Coin> Interprete(String HTTPResponse);
+
 }
