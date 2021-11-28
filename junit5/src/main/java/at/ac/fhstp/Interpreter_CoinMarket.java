@@ -1,5 +1,6 @@
 package at.ac.fhstp;
 
+import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
@@ -23,14 +24,27 @@ public class Interpreter_CoinMarket implements Interpreter {
     public List<Coin> Interprete(String HTTPResponse) {
 
         JSONObject json = new JSONObject(HTTPResponse);
-        Map<String, Object> JsonMap = json.toMap();
         JSONArray jarry = (JSONArray)json.get("data");
+        List<Coin> coinlist = new ArrayList<Coin>();
 
-
-        System.out.println(jarry.getJSONObject(0).optString("id"));
-        System.out.println(jarry.getJSONObject(0).optString("symbol"));
-        System.out.println(jarry.getJSONObject(0).optString("cmc_rank"));
-        System.out.println(jarry.getJSONObject(0).getJSONObject("quote").optString("USD"));
+        for (Object job : jarry) {
+        String id=(((JSONObject)job).optString("id"));
+        String name=(((JSONObject)job).optString("name"));
+        String symbol=(((JSONObject)job).optString("symbol"));
+        String cmc_rank=(((JSONObject)job).optString("cmc_rank"));
+        String price=(((JSONObject)job).getJSONObject("quote").getJSONObject("USD").optString("price"));
+        String volume_24h=(((JSONObject)job).getJSONObject("quote").getJSONObject("USD").optString("volume_24h"));
+        String percent_change_24h=(((JSONObject)job).getJSONObject("quote").getJSONObject("USD").optString("percent_change_24h"));
+        String last_updated=(((JSONObject)job).getJSONObject("quote").getJSONObject("USD").optString("last_updated"));
+        Coin c= new Coin(Integer.parseInt(id),name,symbol,Integer.parseInt(cmc_rank),Double.parseDouble(price),Double.parseDouble(volume_24h),Double.parseDouble(percent_change_24h),last_updated);
+        coinlist.add(c);
+        
+        }
+        
+        Iterator<Coin> ic = coinlist.iterator();
+        while(ic.hasNext()){
+            ic.toString();
+        }
         
         
         // TODO Auto-generated method stub

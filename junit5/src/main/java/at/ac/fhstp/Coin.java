@@ -78,6 +78,17 @@ public class Coin {
         this.last_updated = last_updated;
     }
 
+    public Coin(int id, String name, String symbol, int cmc_rank, double price, double volume_24h, double percent_change_24h, String last_updated) {
+        this.id = id;
+        this.name = name;
+        this.symbol = symbol;
+        this.cmc_rank = cmc_rank;
+        this.price = price;
+        this.volume_24h = volume_24h;
+        this.percent_change_24h = percent_change_24h;
+        this.last_updated = last_updated;
+    }
+
     @Override
     public String toString() {
         return "{" +
