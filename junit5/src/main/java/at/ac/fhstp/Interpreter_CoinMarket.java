@@ -1,5 +1,6 @@
 package at.ac.fhstp;
 
+import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
 
@@ -13,6 +14,7 @@ import java.io.Reader;
 import java.net.URL;
 import java.nio.charset.Charset;
 
+import org.json.JSONArray;
 import org.json.JSONObject;
 
 public class Interpreter_CoinMarket implements Interpreter {
@@ -22,12 +24,15 @@ public class Interpreter_CoinMarket implements Interpreter {
 
         JSONObject json = new JSONObject(HTTPResponse);
         Map<String, Object> JsonMap = json.toMap();
+        JSONArray jarry = (JSONArray)json.get("data");
 
-        for (Map.Entry<String, Object> entry : JsonMap.entrySet()) {
-            System.out.println(entry.getKey() + "/" + entry.getValue().toString() + "\n");
 
-        }
-
+        System.out.println(jarry.getJSONObject(0).optString("id"));
+        System.out.println(jarry.getJSONObject(0).optString("symbol"));
+        System.out.println(jarry.getJSONObject(0).optString("cmc_rank"));
+        System.out.println(jarry.getJSONObject(0).getJSONObject("quote").optString("USD"));
+        
+        
         // TODO Auto-generated method stub
         return null;
     }
