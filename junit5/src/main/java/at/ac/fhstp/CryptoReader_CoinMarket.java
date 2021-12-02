@@ -42,10 +42,7 @@ public class CryptoReader_CoinMarket implements CryptoReader {
                     .send(req, HttpResponse.BodyHandlers.ofString());
 
             // Hier wäre es schöner wenn gleich ein Stream retour kommt.
-            // Siehe
-            // https://www.programcreek.com/java-api-examples/?api=java.net.http.HttpResponse
-            // -> Beispiel 15
-
+       
            // System.out.print("HTTP Status: " + res.toString());
             return res.body().toString();
         } catch (URISyntaxException | IOException | InterruptedException e) {

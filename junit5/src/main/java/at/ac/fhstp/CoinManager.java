@@ -25,7 +25,7 @@ public class CoinManager {
        
         while(ic.hasNext()){
             Coin c = ic.next();
-            System.out.println(c.getSymbol()+" | "+c.getPrice()+" | "+c.getPercent_change_24h());
+            System.out.printf("%-5s | %1.7f | %-1.7f\n", c.getSymbol(), c.getPrice(), c.getPercent_change_24h());
         }
         return this;
     }
@@ -36,5 +36,7 @@ public class CoinManager {
         return this;
     }
     
+
+
 
 }
